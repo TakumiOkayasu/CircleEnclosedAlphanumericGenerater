@@ -1,4 +1,4 @@
-# CircleEnclosedAlphanumericGenerater
+# 丸文字自動生成ツール
 
 - 丸付き数字を作成するマクロ
 - 現在は30まで自動生成する
