@@ -86,9 +86,20 @@ Sub CreateMultipleNumberedCircle()
     Dim offsetPixels As Long
     Dim shapeNames() As String
     Dim ws As Worksheet
+    Dim outputCount As Long
     
     ' アクティブシートを設定
     Set ws = ActiveSheet
+    
+    outputCount = 30
+    
+    ' 数字が入力してあれば
+    If Application.WorksheetFunction.IsNumber(ws.range("G3").value) Then
+        outputCount = ws.range("G3").value
+    Else
+        MsgBox ("半角数字を入力してね")
+        Exit Sub
+    End If
     
     ' 開始位置
     startX = 100!
@@ -100,8 +111,8 @@ Sub CreateMultipleNumberedCircle()
     ' 図形名を格納する配列を準備
     ReDim shapeNames(1 To 30)
     
-    ' 1から30までの円を作成（30ピクセルずつ右下に配置）
-    For i = 1 To 30
+    ' 1からoutputCountまでの円を作成（30ピクセルずつ右下に配置）
+    For i = 1 To outputCount
         CreateNumberedCircle i, _
             startX + (i - 1) * offsetPixels, _
             startY + (i - 1) * offsetPixels
