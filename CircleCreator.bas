@@ -1,4 +1,4 @@
-Attribute VB_Name = "CircleCreater"
+Attribute VB_Name = "CircleCreator"
 Option Explicit
 
 ' 定数定義
@@ -42,7 +42,8 @@ Sub CreateNumberedCircle(number As Long, x As Single, y As Single)
     ' 円のスタイルを設定
     With shpCircle
         ' 塗りつぶしなし（透明）
-        .Fill.Visible = msoFalse
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.RGB = RGB(255, 255, 255)
         
         ' 線の設定
         .Line.Visible = msoTrue
@@ -73,7 +74,6 @@ Sub CreateNumberedCircle(number As Long, x As Single, y As Single)
             .Font.Bold = msoFalse
             .ParagraphFormat.Alignment = msoAlignCenter
         End With
-        
     End With
     
 End Sub
