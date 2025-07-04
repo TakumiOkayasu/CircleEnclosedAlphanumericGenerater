@@ -1,0 +1,2 @@
+# CircleEnclosedAlphanumericGenerater
+丸付き数字を作成するマクロ
