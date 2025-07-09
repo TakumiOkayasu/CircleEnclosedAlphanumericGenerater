@@ -58,6 +58,7 @@ Sub CreateNumberedCircle(number As Long, x As Single, y As Single)
 
         ' テキストを追加・垂直配置を中央に
         With .TextFrame2
+            .WordWrap = msoFalse ' 文字を折り返さない
             .TextRange.Characters.Text = CStr(number)
             .VerticalAnchor = msoAnchorMiddle
             .MarginLeft = 0!
@@ -73,7 +74,6 @@ Sub CreateNumberedCircle(number As Long, x As Single, y As Single)
             .Font.Name = "Calibri 本文"
             .Font.Bold = msoFalse
             .ParagraphFormat.Alignment = msoAlignCenter
-            .WordWrap = msoFalse ' 文字を折り返さない
         End With
     End With
     
