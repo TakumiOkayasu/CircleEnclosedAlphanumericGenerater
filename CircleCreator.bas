@@ -73,6 +73,7 @@ Sub CreateNumberedCircle(number As Long, x As Single, y As Single)
             .Font.Name = "Calibri –{•¶"
             .Font.Bold = msoFalse
             .ParagraphFormat.Alignment = msoAlignCenter
+            .WordWrap = msoFalse ' •¶š‚ğÜ‚è•Ô‚³‚È‚¢
         End With
     End With
     
@@ -94,8 +95,8 @@ Sub CreateMultipleNumberedCircle()
     outputCount = 30
     
     ' ”š‚ª“ü—Í‚µ‚Ä‚ ‚ê‚Î
-    If Application.WorksheetFunction.IsNumber(ws.range("G3").value) Then
-        outputCount = ws.range("G3").value
+    If Application.WorksheetFunction.IsNumber(ws.Range("G3").value) Then
+        outputCount = ws.Range("G3").value
     Else
         MsgBox ("”¼Šp”š‚ğ“ü—Í‚µ‚Ä‚Ë")
         Exit Sub
@@ -121,5 +122,5 @@ Sub CreateMultipleNumberedCircle()
     Next
     
     ' ‚·‚×‚Ä‚Ì¶¬‚µ‚½}Œ`‚ğ‘I‘ğ
-    ws.Shapes.range(shapeNames).Select
+    ws.Shapes.Range(shapeNames).Select
 End Sub
